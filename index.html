@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" />
+<!-- title -->
+<title>Codepen: Best of 2016</title>
+<!-- Reset CSS -->
+<link rel="stylesheet" href="styles/reset.css">
+<!-- Animate CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Ionic Icons CDN -->
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- styles -->
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+<!-- Fixed Animated Gradient -->
+<canvas class="gradient" id="gradient"></canvas>
+<!-- Cards -->
+<div class="wrapper flex flex-col">
+  <nav class="navbar flex flex-row">
+    <!-- Navbar Logo -->
+    <a href="index.html" class="navbar--logo">
+      <img src="assets/nav-logo.png" alt="Logo">
+    </a>
+    <!-- Navbar Links -->
+    <ul class="navbar--links flex flex-row">
+      <li class="navbar--link"><a href="pen-one.html">First Pen</a></li>
+      <li class="navbar--link"><a href="pen-two.html">Second Pen</a></li>
+      <li class="navbar--link"><a href="pen-three.html">Third Pen</a></li>
+    </ul>
+  </nav>
+  <!-- Card Wrapper -->
+  <div class="cards flex flex-row">
+    <!-- Individual Card -->
+    <a href="pen-one.html" class="card card__default">
+      <img src="/assets/t-one.png" class="card--thumbnail" alt="">
+    </a>
+    <a href="pen-two.html" class="card card__default">
+      <img src="/assets/t-two.png" class="card--thumbnail" alt="">
+    </a>
+    <a href="pen-three.html" class="card card__default">
+      <img src="/assets/t-three.png" class="card--thumbnail" alt="">
+    </a>
+  </div>
+  <!-- Footer -->
+  <footer class="footer flex flex-row">
+    <a href="#" class="footer--link">
+      <i class="ion-social-github"></i>
+    </a>
+  </footer>
+</div>
+
+<!--  JQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<!-- Granim JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.0.6/granim.min.js"></script>
+<!-- Granim Init -->
+<script type="text/javascript">
+  /*
+  code snippet adapted from:
+  https://sarcadass.github.io/granim.js/examples.html
+  */
+  var granimInstance = new Granim({
+    element: '#gradient',
+    name: 'basic-gradient',
+    direction: 'left-right',
+    opacity: [1, 1],
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#2F91EB', '#1757E7'],
+                ['#02AAB0', '#00CDAC'],
+                ['#17BF64', '#0E8A82']
+            ],
+            transitionSpeed: 5000
+        }
+    }
+});
+</script>
+<!-- Custom JQuery -->
+<script src="js/app-min.js"></script>
+</body>
+</html>

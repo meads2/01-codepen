@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" />
+<!-- title -->
+<title>Pen Three</title>
+<!-- Reset CSS -->
+<link rel="stylesheet" href="styles/reset.css">
+<!-- Animate CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Ionic Icons CDN -->
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- styles -->
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+<!-- Fixed Animated Gradient -->
+<canvas class="gradient" id="gradient"></canvas>
+<!-- Cards -->
+<div class="wrapper flex flex-col">
+  <nav class="navbar flex flex-row">
+    <!-- Navbar Logo -->
+    <a href="index.html" class="navbar--logo">
+      <img src="assets/nav-logo.png" alt="Logo">
+    </a>
+    <!-- Navbar Links -->
+    <ul class="navbar--links flex flex-row">
+      <li class="navbar--link"><a href="pen-one.html">First Pen</a></li>
+      <li class="navbar--link"><a href="pen-two.html">Second Pen</a></li>
+      <li class="navbar--link"><a href="pen-three.html">Third Pen</a></li>
+    </ul>
+  </nav>
+  <!-- Single Card Wrapper -->
+  <!-- Code taken from:
+    https://desandro.github.io/3dtransforms/docs/card-flip.html
+ -->
+  <section class="card-container flex flex-row">
+    <div id="card">
+      <figure class="front">
+        <a href="#" class="face-toggle">How?</a>
+        <img class="front--image" src="assets/t-three.png" alt="">
+      </figure>
+      <figure class="back">
+        <a href="#" class="face-toggle">Result</a>
+        <!-- iframe from pen -->
+        <iframe class="pen" scrolling='no' title='SVG Kiosk Icon Menu' src='//codepen.io/chrisgannon/embed/EyaPZZ/?height=600&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/chrisgannon/pen/EyaPZZ/'>SVG Kiosk Icon Menu</a> by Chris Gannon (<a href='http://codepen.io/chrisgannon'>@chrisgannon</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+      </figure>
+    </div>
+     <!-- Explanation  -->
+    <article class="article article__default flex flex-col">
+      <h1 class="article--title">SVG Kiosk Icon Menu</h1>
+      <p class="article--body">
+        This is one of my favorite codepens. In addition to cards, navigation is a staple
+        of almost every website and application. Most navigation is pretty boring, but this one
+        is very engaging and fun. The change and animation that takes place from one icon to another
+        is something I have never seen before. I really like the flat color pallete this designer went with.
+        This pallete adds to the fun simple feel that you get when using this navigation.
+      </p>
+      <a href="http://codepen.io/chrisgannon/pen/EyaPZZ" target="_blank" class="article--link">View Actual</a>
+    </article>
+  </section>
+  <!-- Footer -->
+  <footer class="footer flex flex-row">
+    <a href="#" class="footer--link">
+      <i class="ion-social-github"></i>
+    </a>
+  </footer>
+</div>
+
+<!--  JQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<!-- Granim JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.0.6/granim.min.js"></script>
+<!-- Granim Init -->
+<script type="text/javascript">
+  /*
+  code snippet adapted from:
+  https://sarcadass.github.io/granim.js/examples.html
+  */
+  var granimInstance = new Granim({
+    element: '#gradient',
+    name: 'basic-gradient',
+    direction: 'left-right',
+    opacity: [1, 1],
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#2F91EB', '#1757E7'],
+                ['#02AAB0', '#00CDAC'],
+                ['#17BF64', '#0E8A82']
+            ],
+            transitionSpeed: 5000
+        }
+    }
+});
+</script>
+<!-- Custom JQuery -->
+<script src="js/app-min.js"></script>
+</body>
+</html>

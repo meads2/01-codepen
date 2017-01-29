@@ -1,0 +1,221 @@
+// Variables
+$primary: rgb(15,113,203)
+$white: #fafafa
+
+$f-family: 'Roboto', helvetica, sans-serif
+$f-size: 16px, 24px, 32px, 12px
+
+$box-shadow-border-nav: inset 0 -1px 0 rgba(black, .14)
+$box-shadow-border-footer: inset 0 1px 0 rgba(black, .14)
+$box-shadow-card: 0 2px 14px rgba(black,.24), 0 2px 4px rgba(black, .14)
+
+// Global Styling
+*,*:before,*:after
+  box-sizing: border-box
+
+html
+  width: 100%
+  height: 100vh
+
+body
+  font-family: $f-family
+  font-size: 10px
+  //background: #ccc
+  position: relative
+  height: 100%
+
+.wrapper
+  max-width: 1220px
+  height: 100%
+  margin: 0 auto
+
+.flex
+  display: flex
+  flex-wrap: wrap
+
+.flex-row
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+.flex-col
+  justify-content: space-between
+  flex-direction: column
+  align-items: center
+
+
+// Typography
+
+
+// Gradient
+.gradient
+  position: absolute
+  z-index: -1
+  display: block
+  width: 100%
+  height: 100%
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+// Navbar
+.navbar,.footer
+  width: 100%
+  height: 64px
+  margin: 0 auto
+
+.navbar
+  box-shadow: $box-shadow-border-nav
+  border-bottom: 1px solid rgba(#fff,.1)
+
+.navbar--logo
+  width: 40px
+  img
+    width: 140px
+    height: auto
+    vertical-align: middle
+
+.navbar--links
+  font-size: nth($f-size, 1)
+  width: 240px
+  height: 100%
+
+.navbar--link
+  color: rgba(black, .48)
+
+  a
+    display: block
+    height: 100%
+    text-decoration: none
+    color: rgba(black, .48)
+    &:hover
+      color: rgba(black, .66)
+
+.is-active
+  box-shadow: inset 0 4px white
+  color: white
+
+// Cards
+.cards
+  width: 100%
+  height: 600px
+
+.card
+  display: block
+  width: 340px
+  height: auto
+  background: #333
+  overflow: hidden
+  &:hover
+    cursor: pointer
+    transform: scale(1.05)
+    transition: .35s
+
+.card__default
+  box-shadow: $box-shadow-card
+
+.card--thumbnail
+  width: 100%
+  height: auto
+  vertical-align: middle
+
+// Footer
+.footer
+  box-shadow: $box-shadow-border-footer, inset 0 2px 0 rgba(#fff,.08)
+.footer--link
+  display: block
+  margin: 0 auto
+  text-align: center
+  font-size: nth($f-size, 1)
+  text-decoration: none
+  color: rgba(black, .46)
+  text-shadow: 0 1px rgba(#fff,.24)
+
+// Large Pen Cards
+.card-container
+  width: 100%
+  height: 400px
+  perspective: 800px
+
+#card
+  width: 540px
+  height: 100%
+  position: relative
+  transform-style: preserve-3d
+  transition: transform 1s
+
+#card figure
+  margin: 0
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  backface-visibility: hidden
+
+.face-toggle
+  position: absolute
+  backface-visibility: hidden
+  top: 16px
+  right: 16px
+  display: block
+  padding: 16px 32px
+  text-decoration: none
+  background: rgba(black, .68)
+  color: $white
+  font-size: nth($f-size, 4)
+  border-radius: 4px
+  &:hover
+    background: rgba(black, .78)
+
+.front,.back
+  position: relative
+
+#card .front
+  background: #fff
+
+#card .back
+  background: red
+  transform: rotateY(180deg)
+
+.front--image
+  width: 100%
+  height: auto
+
+.pen
+  height: 100%
+
+.flipped
+  transform: rotateY(180deg)
+
+// Article
+.article
+  flex: 1
+  height: 100%
+  padding: 64px 32px
+  margin-left: 60px
+
+.article__default
+  background: #fff
+  box-shadow: 0 2px 14px rgba(black, .2)
+  border-radius: 2px
+
+.article--title
+  font-size: nth($f-size, 2)
+  font-weight: 800
+  color: rgb(49,58,66)
+.article--body
+  font-size: nth($f-size, 4)
+  line-height: 24px
+  color: rgb(138,149,159)
+  font-weight: 100
+.article--link
+  margin: 0 auto
+  background: $primary
+  padding: 16px 40px
+  border-radius: 2px
+  color: white
+  text-decoration: none
+  font-size: nth($f-size, 1)
+  &:hover
+    background: lighten($primary, 5%)

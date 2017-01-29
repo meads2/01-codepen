@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" />
+<!-- title -->
+<title>Pen One</title>
+<!-- Reset CSS -->
+<link rel="stylesheet" href="styles/reset.css">
+<!-- Animate CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Ionic Icons CDN -->
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- styles -->
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+<!-- Fixed Animated Gradient -->
+<canvas class="gradient" id="gradient"></canvas>
+<!-- Cards -->
+<div class="wrapper flex flex-col">
+  <nav class="navbar flex flex-row">
+    <!-- Navbar Logo -->
+    <a href="index.html" class="navbar--logo">
+      <img src="assets/nav-logo.png" alt="Logo">
+    </a>
+    <!-- Navbar Links -->
+    <ul class="navbar--links flex flex-row">
+      <li class="navbar--link"><a href="pen-one.html">First Pen</a></li>
+      <li class="navbar--link"><a href="pen-two.html">Second Pen</a></li>
+      <li class="navbar--link"><a href="pen-three.html">Third Pen</a></li>
+    </ul>
+  </nav>
+  <!-- Single Card Wrapper -->
+  <!-- Code taken from:
+    https://desandro.github.io/3dtransforms/docs/card-flip.html
+ -->
+  <section class="card-container flex flex-row">
+    <div id="card">
+      <figure class="front">
+        <a href="#" class="face-toggle">How?</a>
+        <img class="front--image" src="assets/t-one.png" alt="">
+      </figure>
+      <figure class="back">
+        <a href="#" class="face-toggle">Result</a>
+        <!-- iframe from pen -->
+        <iframe class="pen" scrolling='yes' title='News Cards - CSS only' src='//codepen.io/mauriceconchis/embed/YWBxAg/?height=400&theme-id=0&default-tab=html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; height: 100%;'>See the Pen <a href='http://codepen.io/mauriceconchis/pen/YWBxAg/'>News Cards - CSS only</a> by Aleksandar Čugurović (<a href='http://codepen.io/mauriceconchis'>@mauriceconchis</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+      </figure>
+    </div>
+     <!-- Explanation  -->
+    <article class="article article__default flex flex-col">
+      <h1 class="article--title">New Cards - CSS Only</h1>
+      <p class="article--body">
+        I really like this pen because it makes use of some
+        really cool scrolling effects done in simple CSS. The
+        design of these cards is also very appealing. Additionally the
+        content of these cards caught my eye. I am very interested in web design
+        and more specifically UI design. "Cards" as they are commonly known as have
+        become a major design element of many websites and applications. I enjoy looking
+        at other people's design and coding of cards to see how they put their own style into
+        a rather common element.
+        </style>
+      </p>
+      <a href="http://codepen.io/mauriceconchis/pen/YWBxAg" target="_blank" class="article--link">View Actual</a>
+    </article>
+  </section>
+  <!-- Footer -->
+  <footer class="footer flex flex-row">
+    <a href="#" class="footer--link">
+      <i class="ion-social-github"></i>
+    </a>
+  </footer>
+</div>
+
+<!--  JQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<!-- Granim JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.0.6/granim.min.js"></script>
+<!-- Granim Init -->
+<script type="text/javascript">
+  /*
+  code snippet adapted from:
+  https://sarcadass.github.io/granim.js/examples.html
+  */
+  var granimInstance = new Granim({
+    element: '#gradient',
+    name: 'basic-gradient',
+    direction: 'left-right',
+    opacity: [1, 1],
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#2F91EB', '#1757E7'],
+                ['#02AAB0', '#00CDAC'],
+                ['#17BF64', '#0E8A82']
+            ],
+            transitionSpeed: 5000
+        }
+    }
+});
+</script>
+<!-- Custom JQuery -->
+<script src="js/app-min.js"></script>
+</body>
+</html>
